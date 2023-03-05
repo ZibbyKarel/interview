@@ -9,9 +9,7 @@ export interface Rate {
 export type GetRatesApiResponse =
 	| {
 			data: Rate[];
-			error: never;
 	  }
 	| {
-			data: never;
 			error: string;
 	  };

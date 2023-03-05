@@ -19,14 +19,17 @@ describe('GET /api/rates', () => {
 			data: expect.any(Array),
 			error: undefined,
 		});
-		res.data.data.forEach((item) => {
-			expect(item).toEqual({
-				amount: expect.any(Number),
-				code: expect.any(String),
-				country: expect.any(String),
-				currency: expect.any(String),
-				rate: expect.any(Number),
+
+		if ('data' in res.data) {
+			res.data.data.forEach((item) => {
+				expect(item).toEqual({
+					amount: expect.any(Number),
+					code: expect.any(String),
+					country: expect.any(String),
+					currency: expect.any(String),
+					rate: expect.any(Number),
+				});
 			});
-		});
+		}
 	});
 });

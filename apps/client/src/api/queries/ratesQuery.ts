@@ -1,6 +1,5 @@
 import { useQuery } from 'react-query';
-import { Rate } from '@momence-interview-nx/types';
-import { GetRatesApiResponse } from '../../../types/apiResponses';
+import { GetRatesApiResponse, Rate } from '@momence-interview-nx/types';
 
 export type RatesQueryData = Rate[];
 
@@ -10,7 +9,7 @@ export const getRates = async (): Promise<Rate[]> => {
 	const response = await fetch('/api/rates');
 	const resp: GetRatesApiResponse = await response.json();
 
-	if (resp.error) {
+	if ('error' in resp) {
 		throw new Error(resp.error);
 	} else {
 		return resp.data;

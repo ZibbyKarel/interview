@@ -1,17 +1,23 @@
-import styled from 'styled-components';
+import React from 'react';
+import { QueryClient, QueryClientProvider } from 'react-query';
+import { ThemeProvider } from 'styled-components';
+import { createTheme } from '../utils/createTheme';
+import { ReactQueryDevtools } from 'react-query/devtools';
+import { RatesPage } from './pages/rates-page';
 
-import NxWelcome from './nx-welcome';
+const queryClient = new QueryClient();
 
-const StyledApp = styled.div`
-  // Your style here
-`;
-
-export function App() {
-  return (
-    <StyledApp>
-      <NxWelcome title="client" />
-    </StyledApp>
-  );
-}
-
-export default App;
+/**
+ * This is the main component of the application
+ */
+export const App: React.FC = () => {
+	return (
+		<QueryClientProvider client={queryClient}>
+			<ThemeProvider theme={createTheme()}>
+				{/* Normally there would be some router but since this is just a demo app... */}
+				<RatesPage />
+			</ThemeProvider>
+			<ReactQueryDevtools initialIsOpen={false} />
+		</QueryClientProvider>
+	);
+};
