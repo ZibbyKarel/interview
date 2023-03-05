@@ -1,35 +1,64 @@
 {
-  "root": true,
-  "ignorePatterns": ["**/*"],
-  "plugins": ["@nrwl/nx"],
-  "overrides": [
-    {
-      "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
-      "rules": {
-        "@nrwl/nx/enforce-module-boundaries": [
-          "error",
-          {
-            "enforceBuildableLibDependency": true,
-            "allow": [],
-            "depConstraints": [
-              {
-                "sourceTag": "*",
-                "onlyDependOnLibsWithTags": ["*"]
-              }
-            ]
-          }
-        ]
-      }
-    },
-    {
-      "files": ["*.ts", "*.tsx"],
-      "extends": ["plugin:@nrwl/nx/typescript"],
-      "rules": {}
-    },
-    {
-      "files": ["*.js", "*.jsx"],
-      "extends": ["plugin:@nrwl/nx/javascript"],
-      "rules": {}
-    }
-  ]
+	"root": true,
+	"ignorePatterns": ["**/*"],
+	"plugins": ["@nrwl/nx", "prettier", "react", "react-hooks", "@typescript-eslint", "unused-imports"],
+	"overrides": [
+		{
+			"files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
+			"rules": {
+				"@nrwl/nx/enforce-module-boundaries": [
+					"error",
+					{
+						"enforceBuildableLibDependency": true,
+						"allow": [],
+						"depConstraints": [
+							{
+								"sourceTag": "*",
+								"onlyDependOnLibsWithTags": ["*"]
+							}
+						]
+					}
+				],
+				"indent": ["error", "tab"],
+				"eqeqeq": "error",
+				"no-console": "warn",
+				"no-undef": "error",
+				"no-unused-vars": "off",
+				"prettier/prettier": "error",
+				"@typescript-eslint/explicit-module-boundary-types": "off",
+				"@typescript-eslint/explicit-function-return-type": "off",
+				"@typescript-eslint/no-explicit-any": "error",
+				"@typescript-eslint/no-unused-vars": "warn",
+				"react/display-name": "off",
+				"react/no-children-prop": "off",
+				"react/react-in-jsx-scope": "off",
+				"react-hooks/rules-of-hooks": "error",
+				"react-hooks/exhaustive-deps": "warn",
+				"unused-imports/no-unused-imports": "error",
+				"react/jsx-sort-props": [
+					"error",
+					{
+						"shorthandFirst": true,
+						"ignoreCase": true,
+						"noSortAlphabetically": false,
+						"callbacksLast": false,
+						"shorthandLast": false,
+						"reservedFirst": ["key"],
+						"locale": "en"
+					}
+				],
+				"@typescript-eslint/no-empty-function": "off"
+			}
+		},
+		{
+			"files": ["*.ts", "*.tsx"],
+			"extends": ["plugin:@nrwl/nx/typescript"],
+			"rules": {}
+		},
+		{
+			"files": ["*.js", "*.jsx"],
+			"extends": ["plugin:@nrwl/nx/javascript"],
+			"rules": {}
+		}
+	]
 }
