@@ -43,7 +43,12 @@ export const RatesPage: FC = () => {
 
 						{convertValues && (
 							<Typography gutterBottom data-testid={RatesPageTestIds.title} fontSize={30}>
-								=&nbsp;{convert(convertValues.amount, convertValues.currency).toFixed(2)}&nbsp;{convertValues.currency}
+								=&nbsp;
+								<span data-testid={RatesPageTestIds.convertedAmount}>
+									{convert(convertValues.amount, convertValues.currency).toFixed(2)}
+								</span>
+								&nbsp;
+								{convertValues.currency}
 							</Typography>
 						)}
 					</Stack>

@@ -13,6 +13,7 @@ export const RatesPageTestIds = {
 	loader: 'loader',
 	title: 'title',
 	error: 'error',
+	convertedAmount: 'converted-amount',
 };
 
 export const TableTestIds = {
