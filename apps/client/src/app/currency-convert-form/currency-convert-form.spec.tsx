@@ -1,4 +1,4 @@
-import { CurrencyConvertFormTestIds } from '@momence-interview-nx/global-stuff';
+import { CurrencyConvertFormTestIds } from '@momence-interview-nx/shared';
 import { render } from '@testing-library/react';
 import { CurrencyConvertForm, CurrencyConvertFormProps } from './currency-convert-form';
 

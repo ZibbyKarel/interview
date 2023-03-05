@@ -8,7 +8,7 @@ import { CurrencyConvertForm } from '../currency-convert-form/currency-convert-f
 import { Table } from '../table/table';
 import { convertRateToTableRow } from '../../utils/rateUtils';
 import { useCZKCurrencyConvertor } from '../../utils/useCZKCurrencyConvertor';
-import { RatesPageTestIds } from '@momence-interview-nx/global-stuff';
+import { RatesPageTestIds } from '@momence-interview-nx/shared';
 
 /**
  * This component (or container if you want) should display same data as this page:

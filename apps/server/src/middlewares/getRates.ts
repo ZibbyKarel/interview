@@ -1,4 +1,4 @@
-import { GetRatesApiResponse } from '@momence-interview-nx/global-stuff';
+import { GetRatesApiResponse } from '@momence-interview-nx/shared';
 import axios from 'axios';
 import { RequestHandler } from 'express';
 import { parseRates } from '../utils/parseRates';

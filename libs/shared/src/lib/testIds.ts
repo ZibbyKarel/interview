@@ -16,6 +16,7 @@ export const RatesPageTestIds = {
 };
 
 export const TableTestIds = {
+	wrapper: 'table-wrapper',
 	headerCell: 'headerCell',
 	row: 'row',
 	cell: 'cell',

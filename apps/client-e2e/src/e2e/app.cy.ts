@@ -1,13 +1,10 @@
-import { getGreeting } from '../support/app.po';
+beforeEach(() => {
+	cy.visit('/');
+});
 
-describe('client', () => {
-  beforeEach(() => cy.visit('/'));
-
-  it('should display welcome message', () => {
-    // Custom command example, see `../support/commands.ts` file
-    cy.login('my-email@something.com', 'myPassword');
-
-    // Function helper example, see `../support/app.po.ts` file
-    getGreeting().contains('Welcome client');
-  });
+it('should all stuff', () => {
+	cy.get('h4').contains('Central bank exchange rate fixing');
+	// getPageTitle().contains('Central bank exchange rate fixing');
+	// getConvertorForm().should('be.visible');
+	// getTable().should('be.visible');
 });

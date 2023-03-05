@@ -15,7 +15,8 @@
 		"skipDefaultLibCheck": true,
 		"baseUrl": ".",
 		"paths": {
-			"@momence-interview-nx/global-stuff": ["libs/global-stuff/src/index.ts"]
+			"@momence-interview-nx/shared": ["libs/shared/src/index.ts"],
+			"@momence-interview-nx/shared/e2e-assets": ["libs/shared/e2e-assets/src/index.ts"]
 		}
 	},
 	"exclude": ["node_modules", "tmp"]

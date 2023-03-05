@@ -1,4 +1,4 @@
-import { Rate } from '@momence-interview-nx/global-stuff';
+import { Rate } from '@momence-interview-nx/shared';
 import csvToJson from 'csvtojson';
 import { CSVParseParam } from 'csvtojson/v2/Parameters';
 

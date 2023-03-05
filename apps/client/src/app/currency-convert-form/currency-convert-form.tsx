@@ -5,7 +5,7 @@ import Typography from '@mui/material/Typography';
 import Stack from '@mui/material/Stack';
 import MenuItem from '@mui/material/MenuItem';
 import _ from 'lodash';
-import { CurrencyConvertFormTestIds } from '@momence-interview-nx/global-stuff';
+import { CurrencyConvertFormTestIds } from '@momence-interview-nx/shared';
 
 const TEXT_MARGIN = -3;
 

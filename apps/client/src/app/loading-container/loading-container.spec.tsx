@@ -1,4 +1,4 @@
-import { LoadingContainerTestIds } from '@momence-interview-nx/global-stuff';
+import { LoadingContainerTestIds } from '@momence-interview-nx/shared';
 import { render } from '@testing-library/react';
 import { UseQueryResult } from 'react-query';
 import { LoadingContainer } from './loading-container';
