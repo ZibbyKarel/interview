@@ -3,7 +3,8 @@
 	"version": "0.0.0",
 	"license": "MIT",
 	"scripts": {
-		"check:types": "./tools/check-types.sh"
+		"check:types": "./tools/check-types.sh",
+		"test": "yarn nx run-many --all --target=test && yarn nx run-many --all --target=e2e"
 	},
 	"private": true,
 	"dependencies": {
