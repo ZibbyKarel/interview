@@ -1,10 +1,10 @@
 /* eslint-disable */
 export default {
-	displayName: 'types',
+	displayName: 'global-stuff',
 	preset: '../../jest.preset.js',
 	transform: {
 		'^.+\\.[tj]sx?$': ['ts-jest', { tsconfig: '<rootDir>/tsconfig.spec.json' }],
 	},
 	moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
-	coverageDirectory: '../../coverage/libs/types',
+	coverageDirectory: '../../coverage/libs/global-stuff',
 };

@@ -1,4 +1,4 @@
-import { GetRatesApiResponse } from '@momence-interview-nx/types';
+import { GetRatesApiResponse } from '@momence-interview-nx/global-stuff';
 import axios from 'axios';
 
 describe('GET /', () => {

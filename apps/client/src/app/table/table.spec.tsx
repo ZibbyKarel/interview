@@ -1,5 +1,6 @@
+import { TableTestIds } from '@momence-interview-nx/global-stuff';
 import { render } from '@testing-library/react';
-import { DEFAULT_ROWS_PER_PAGE, Table, TableProps, TableTestIds } from './table';
+import { DEFAULT_ROWS_PER_PAGE, Table, TableProps } from './table';
 
 const props: TableProps = {
 	headers: ['Header 0', 'Header 1', 'Header 2', 'Header 3', 'Header 4'],

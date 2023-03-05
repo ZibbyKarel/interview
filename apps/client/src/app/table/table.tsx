@@ -8,6 +8,7 @@ import Paper from '@mui/material/Paper';
 import TableRow from '@mui/material/TableRow';
 import TablePagination from '@mui/material/TablePagination';
 import * as SC from './table.styles';
+import { TableTestIds } from '@momence-interview-nx/global-stuff';
 
 const ROWS_PER_PAGE_OPTIONS = [5, 10, 25];
 
@@ -72,10 +73,4 @@ export const Table: React.FC<TableProps> = ({ headers, rows }) => {
 			/>
 		</TableContainer>
 	);
-};
-
-export const TableTestIds = {
-	headerCell: 'headerCell',
-	row: 'row',
-	cell: 'cell',
 };

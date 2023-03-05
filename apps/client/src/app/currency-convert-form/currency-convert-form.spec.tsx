@@ -1,5 +1,6 @@
+import { CurrencyConvertFormTestIds } from '@momence-interview-nx/global-stuff';
 import { render } from '@testing-library/react';
-import { CurrencyConvertForm, CurrencyConvertFormProps, CurrencyConvertFormTestIds } from './currency-convert-form';
+import { CurrencyConvertForm, CurrencyConvertFormProps } from './currency-convert-form';
 
 const props: CurrencyConvertFormProps = {
 	currencies: ['EUR', 'USD', 'GBP'],

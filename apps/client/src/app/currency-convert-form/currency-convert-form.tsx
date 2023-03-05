@@ -5,6 +5,7 @@ import Typography from '@mui/material/Typography';
 import Stack from '@mui/material/Stack';
 import MenuItem from '@mui/material/MenuItem';
 import _ from 'lodash';
+import { CurrencyConvertFormTestIds } from '@momence-interview-nx/global-stuff';
 
 const TEXT_MARGIN = -3;
 
@@ -72,10 +73,4 @@ export const CurrencyConvertForm: FC<CurrencyConvertFormProps> = ({ currencies, 
 			</Stack>
 		</Box>
 	);
-};
-
-export const CurrencyConvertFormTestIds = {
-	wrapper: 'currency-convert-form-wrapper',
-	amountInput: 'amount',
-	currencySelect: 'currency',
 };

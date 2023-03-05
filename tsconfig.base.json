@@ -15,7 +15,7 @@
 		"skipDefaultLibCheck": true,
 		"baseUrl": ".",
 		"paths": {
-			"@momence-interview-nx/types": ["libs/types/src/index.ts"]
+			"@momence-interview-nx/global-stuff": ["libs/global-stuff/src/index.ts"]
 		}
 	},
 	"exclude": ["node_modules", "tmp"]

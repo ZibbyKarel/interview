@@ -1,21 +1,21 @@
 {
-	"name": "types",
+	"name": "global-stuff",
 	"$schema": "../../node_modules/nx/schemas/project-schema.json",
-	"sourceRoot": "libs/types/src",
+	"sourceRoot": "libs/global-stuff/src",
 	"projectType": "library",
 	"targets": {
 		"lint": {
 			"executor": "@nrwl/linter:eslint",
 			"outputs": ["{options.outputFile}"],
 			"options": {
-				"lintFilePatterns": ["libs/types/**/*.ts"]
+				"lintFilePatterns": ["libs/global-stuff/**/*.ts"]
 			}
 		},
 		"test": {
 			"executor": "@nrwl/jest:jest",
 			"outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
 			"options": {
-				"jestConfig": "libs/types/jest.config.ts",
+				"jestConfig": "libs/global-stuff/jest.config.ts",
 				"passWithNoTests": true
 			},
 			"configurations": {

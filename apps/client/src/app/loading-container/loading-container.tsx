@@ -2,6 +2,7 @@ import { FC, PropsWithChildren } from 'react';
 import { UseQueryResult } from 'react-query';
 import CircularProgress from '@mui/material/CircularProgress';
 import Container from '@mui/material/Container';
+import { LoadingContainerTestIds } from '@momence-interview-nx/global-stuff';
 
 export interface LoadingContainerProps extends PropsWithChildren {
 	query: UseQueryResult;
@@ -24,9 +25,4 @@ export const LoadingContainer: FC<LoadingContainerProps> = ({ children, query })
 	}
 
 	return <>{children}</>;
-};
-
-export const LoadingContainerTestIds = {
-	loader: 'loader',
-	error: 'error',
 };

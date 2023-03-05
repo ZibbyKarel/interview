@@ -1,5 +1,5 @@
 import { useQuery } from 'react-query';
-import { GetRatesApiResponse, Rate } from '@momence-interview-nx/types';
+import { GetRatesApiResponse, Rate } from '@momence-interview-nx/global-stuff';
 
 export type RatesQueryData = Rate[];
 

@@ -1,6 +1,7 @@
+import { LoadingContainerTestIds } from '@momence-interview-nx/global-stuff';
 import { render } from '@testing-library/react';
 import { UseQueryResult } from 'react-query';
-import { LoadingContainer, LoadingContainerTestIds } from './loading-container';
+import { LoadingContainer } from './loading-container';
 
 // type assertion is used to avoid error: "is not assignable to type 'UseQueryResult'"
 // in the real world I would create some generic "UseQueryResultMock" type to simulate
