@@ -3,6 +3,7 @@ import { UseQueryResult } from 'react-query';
 import CircularProgress from '@mui/material/CircularProgress';
 import Container from '@mui/material/Container';
 import { LoadingContainerTestIds } from '@momence-interview-nx/shared';
+import * as SC from './loading-container.styles';
 
 export interface LoadingContainerProps extends PropsWithChildren {
 	query: UseQueryResult;
@@ -21,7 +22,7 @@ export const LoadingContainer: FC<LoadingContainerProps> = ({ children, query })
 	}
 
 	if (query.isError) {
-		return <div data-testid={LoadingContainerTestIds.error}>Error</div>;
+		return <SC.ErrorContainer data-testid={LoadingContainerTestIds.error}>Error</SC.ErrorContainer>;
 	}
 
 	return <>{children}</>;

@@ -5,6 +5,9 @@
  */
 export const createTheme = () => {
 	return {
+		palette: {
+			error: '#ff6262',
+		},
 		tableRowColorPrimary: 'white',
 		tableRowColorSecondary: 'rgba(0, 0, 0, 0.04)',
 	};
