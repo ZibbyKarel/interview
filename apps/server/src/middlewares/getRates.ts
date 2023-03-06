@@ -17,7 +17,7 @@ export const getRates: RequestHandler = async (req, res) => {
 		const data = await parseRates(response.data);
 		resp = { data };
 	} catch (err) {
-		// todo: log error
+		console.error(err); // potencially log to kibana or something similar
 	}
 
 	res.send(resp);

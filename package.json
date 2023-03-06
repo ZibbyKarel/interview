@@ -6,7 +6,8 @@
 		"check:types": "./tools/check-types.sh",
 		"test": "yarn nx run-many --all --target=test && yarn nx run-many --all --target=e2e",
 		"start": "yarn concurrently -n server,app -c auto -k -s \"command-app\" \"yarn nx serve server\" \"yarn nx serve client\"",
-		"storybook": "NODE_OPTIONS=--openssl-legacy-provider yarn nx run client:storybook"
+		"storybook": "NODE_OPTIONS=--openssl-legacy-provider yarn nx run client:storybook",
+		"lint": "yarn nx run-many --target=lint --all"
 	},
 	"private": true,
 	"dependencies": {

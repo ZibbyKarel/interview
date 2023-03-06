@@ -7,7 +7,7 @@ import { LoadingContainer } from '../loading-container/loading-container';
 import { CurrencyConvertForm } from '../currency-convert-form/currency-convert-form';
 import { Table } from '../table/table';
 import { convertRateToTableRow } from '../../utils/rateUtils';
-import { useCZKCurrencyConvertor } from '../../utils/useCZKCurrencyConvertor';
+import { useCZKCurrencyConvertor } from '../../utils/hooks/useCZKCurrencyConvertor';
 import { RatesPageTestIds } from '@momence-interview-nx/shared';
 
 /**

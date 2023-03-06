@@ -1,6 +1,6 @@
 import { useCallback } from 'react';
 import { useQueryClient } from 'react-query';
-import { getRateQueryKey, RatesQueryData } from '../api/queries/ratesQuery';
+import { getRateQueryKey, RatesQueryData } from '../../api/queries/ratesQuery';
 
 export const useCZKCurrencyConvertor = () => {
 	const queryClient = useQueryClient();

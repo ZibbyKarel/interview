@@ -31,6 +31,7 @@ It is insainly powerfull I must say. For this kind of small application it is li
 yarn start     // will run server and client at once
 yarn test      // will run all unit and e2e tests of all apps
 yarn storybook // will open component library
+yarn lint      // will run all linters for all projects
 
 nx serve server   // will start server
 nx serve client   // will start client

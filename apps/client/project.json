@@ -54,11 +54,17 @@
 			}
 		},
 		"test": {
-			"executor": "@nrwl/vite:test",
-			"outputs": ["coverage/apps/client"],
+			"executor": "@nrwl/jest:jest",
+			"outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
 			"options": {
-				"passWithNoTests": true,
-				"reportsDirectory": "../../coverage/apps/client"
+				"jestConfig": "apps/client/jest.config.ts",
+				"passWithNoTests": true
+			},
+			"configurations": {
+				"ci": {
+					"ci": true,
+					"codeCoverage": true
+				}
 			}
 		},
 		"lint": {

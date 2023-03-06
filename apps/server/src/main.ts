@@ -9,10 +9,6 @@ const app = express();
 
 app.use(morgan('short'));
 
-app.get('/', (req, res) => {
-	res.send({ message: 'Hello API' });
-});
-
 app.get('/api/rates', getRates);
 
 app.listen(port, host, () => {

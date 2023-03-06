@@ -4,7 +4,7 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Stack from '@mui/material/Stack';
 import MenuItem from '@mui/material/MenuItem';
-import _ from 'lodash';
+import { debounce } from 'lodash';
 import { CurrencyConvertFormTestIds } from '@momence-interview-nx/shared';
 
 const TEXT_MARGIN = -3;
@@ -20,7 +20,7 @@ export const CurrencyConvertForm: FC<CurrencyConvertFormProps> = ({ currencies, 
 	const [currency, setCurrency] = useState<string>(defaultCurrency);
 
 	// do not call onChange on every keystroke, but only after 500ms of inactivity
-	const debouncedOnChange = useCallback(_.debounce(onChange, 500), []);
+	const debouncedOnChange = useCallback(debounce(onChange, 500), []);
 
 	useEffect(() => {
 		debouncedOnChange(amount ?? 0, currency);
