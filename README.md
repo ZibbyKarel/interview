@@ -54,7 +54,7 @@ I have create 4 applications:
 
 <br>
 
-Since I have used MUI, Styled-Components seems like a redundand framework but it was in a task description. So I have created at least 2 styled components and global Theme to complete the assignment and demonstrate the coding style I'm used to.
+Since I have used MUI, Styled-Components seems like a redundand framework but it was in a task description. So I have created at least 2 styled components and global Theme to complete the assignment and demonstrate the coding style I'm used to from Rohlik.cz.
 
 ### Application Graph
 
