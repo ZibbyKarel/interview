@@ -1,15 +1,15 @@
 import { CurrencyConvertFormTestIds } from '@momence-interview-nx/shared';
-import { render } from '@testing-library/react';
 import { CurrencyConvertForm, CurrencyConvertFormProps } from './currency-convert-form';
+import { renderApplication } from '../../utils/testing/renderApplication';
 
 const props: CurrencyConvertFormProps = {
 	currencies: ['EUR', 'USD', 'GBP'],
-	onChange: console.log,
+	onChange: jest.fn(),
 	defaultCurrency: 'EUR',
 };
 
 it('renders all inputs', () => {
-	const { getByTestId } = render(<CurrencyConvertForm {...props} />);
+	const { getByTestId } = renderApplication(<CurrencyConvertForm {...props} />);
 	expect(getByTestId(CurrencyConvertFormTestIds.amountInput)).toBeDefined();
 	expect(getByTestId(CurrencyConvertFormTestIds.currencySelect)).toBeDefined();
 });

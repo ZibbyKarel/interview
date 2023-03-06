@@ -1,6 +1,6 @@
 import { TableTestIds } from '@momence-interview-nx/shared';
-import { render } from '@testing-library/react';
 import { DEFAULT_ROWS_PER_PAGE, Table, TableProps } from './table';
+import { renderApplication } from '../../utils/testing/renderApplication';
 
 const props: TableProps = {
 	headers: ['Header 0', 'Header 1', 'Header 2', 'Header 3', 'Header 4'],
@@ -20,13 +20,13 @@ const props: TableProps = {
 };
 
 it('should render correct amount of header cells', () => {
-	const { getAllByTestId } = render(<Table {...props} />);
+	const { getAllByTestId } = renderApplication(<Table {...props} />);
 	const headerCells = getAllByTestId(TableTestIds.headerCell);
 	expect(headerCells).toHaveLength(props.headers.length);
 });
 
 it('should render correct amount of rows and cells by default', () => {
-	const { getAllByTestId } = render(<Table {...props} />);
+	const { getAllByTestId } = renderApplication(<Table {...props} />);
 
 	const rows = getAllByTestId(TableTestIds.row);
 	expect(rows).toHaveLength(DEFAULT_ROWS_PER_PAGE);

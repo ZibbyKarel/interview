@@ -1,5 +1,10 @@
 import { QueryClient } from 'react-query';
 
+/**
+ * Creates QueryClient instance with default options
+ *
+ * @returns {QueryClient} - QueryClient instance
+ */
 export const createQueryClient = () => {
 	return new QueryClient({
 		defaultOptions: {

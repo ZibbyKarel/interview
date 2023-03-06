@@ -5,9 +5,11 @@
  */
 export const createTheme = () => {
 	return {
+		// some palete colors
 		palette: {
 			error: '#ff6262',
 		},
+		// some tokens
 		tableRowColorPrimary: 'white',
 		tableRowColorSecondary: 'rgba(0, 0, 0, 0.04)',
 	};
