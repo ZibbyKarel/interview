@@ -4,7 +4,9 @@
 	"license": "MIT",
 	"scripts": {
 		"check:types": "./tools/check-types.sh",
-		"test": "yarn nx run-many --all --target=test && yarn nx run-many --all --target=e2e"
+		"test": "yarn nx run-many --all --target=test && yarn nx run-many --all --target=e2e",
+		"start": "yarn concurrently -n server,app -c auto -k -s \"command-app\" \"yarn nx serve server\" \"yarn nx serve client\"",
+		"storybook": "NODE_OPTIONS=--openssl-legacy-provider yarn nx run client:storybook"
 	},
 	"private": true,
 	"dependencies": {
@@ -14,6 +16,7 @@
 		"@mui/material": "^5.11.11",
 		"@mui/styled-engine-sc": "^5.11.11",
 		"axios": "^1.0.0",
+		"concurrently": "^7.6.0",
 		"csvtojson": "^2.0.10",
 		"express": "~4.18.1",
 		"morgan": "^1.10.0",
