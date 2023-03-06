@@ -44,7 +44,7 @@ nx serve client   // will start client
 I have create 4 applications:
 
 - **client** -- _main client app + storybook as a component library_
-- **server** - _simple express backend for client app that is used as a proxy to CNB api_
+- **server** - _simple express backend for client app that is used as a "proxy" to CNB api_
 - **client-e2e** - _some cypress e2e tests of client application_
 - **server-e2e** - _basic server e2e tests which should test the API_
 
@@ -53,6 +53,8 @@ I have create 4 applications:
 - **shared** - _library that shares some types and data-testid attribut values across the apps_
 
 <br>
+
+Since I have used MUI, Styled-Components seems like a redundand framework but it was in a task description. So I have created at least 2 styled components and global Theme to complete the assignment and demonstrate the coding style I'm used to.
 
 ### Application Graph
 
