@@ -18,7 +18,9 @@ Create a simple React app (don’t use NextJS please), which:
 
 Overall: Keep the code simple and the UI nice and easy to use for the user.
 
-<br>
+### Screen of created app
+
+![Screen of created app](./screen.png)
 
 ## Implementation
 
@@ -50,7 +52,6 @@ I have create 4 applications:
 
 - **shared** - _library that shares some types and data-testid attribut values across the apps_
 
-<br>
 <br>
 
 ### Application Graph
