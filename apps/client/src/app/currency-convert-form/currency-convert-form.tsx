@@ -6,25 +6,33 @@ import Stack from '@mui/material/Stack';
 import MenuItem from '@mui/material/MenuItem';
 import { debounce } from 'lodash';
 import { CurrencyConvertFormTestIds } from '@momence-interview-nx/shared';
-
-const TEXT_MARGIN = -3;
+import { useCZKCurrencyConvertor } from '../../utils/hooks/useCZKCurrencyConvertor';
 
 export interface CurrencyConvertFormProps {
 	currencies: string[];
-	onChange: (amount: number, currency: string) => void;
 	defaultCurrency: string;
 }
 
-export const CurrencyConvertForm: FC<CurrencyConvertFormProps> = ({ currencies, defaultCurrency, onChange }) => {
+export const CurrencyConvertForm: FC<CurrencyConvertFormProps> = ({ currencies, defaultCurrency }) => {
 	const [amount, setAmount] = useState<number | undefined>();
 	const [currency, setCurrency] = useState<string>(defaultCurrency);
 
-	// do not call onChange on every keystroke, but only after 500ms of inactivity
-	const debouncedOnChange = useCallback(debounce(onChange, 500), []);
+	const [convertedAmount, setConvertedAmount] = useState<string>(Number(0).toFixed(2));
+
+	const convert = useCZKCurrencyConvertor();
 
 	useEffect(() => {
-		debouncedOnChange(amount ?? 0, currency);
-	}, [amount, currency]);
+		setConvertedAmountDebounced(amount ?? 0, currency);
+	}, [amount]);
+
+	const setConverted = (amountValue: number, currencyValue: string) => {
+		const newConvertedAmount = convert(amountValue, currencyValue).toFixed(2);
+		setConvertedAmount(newConvertedAmount);
+	};
+
+	// do not call onChange on every keystroke, but only after 500ms of inactivity
+	// useCallback to recreate funcion only after rerender
+	const setConvertedAmountDebounced = useCallback(debounce(setConverted, 500), [setConvertedAmount]);
 
 	const handleAmountChange = (event: ChangeEvent<HTMLInputElement>) => {
 		setAmount(event.target.value ? Number(event.target.value) : undefined);
@@ -32,13 +40,13 @@ export const CurrencyConvertForm: FC<CurrencyConvertFormProps> = ({ currencies, 
 
 	const handleCurrencyChange = (event: ChangeEvent<HTMLInputElement>) => {
 		setCurrency(event.target.value);
+		// set converted amount imeediately. No need to wait
+		setConverted(amount ?? 0, event.target.value);
 	};
 
 	return (
 		<Box noValidate autoComplete="off" component="form" data-testid={CurrencyConvertFormTestIds.wrapper}>
 			<Stack direction="row" gap={2} sx={{ alignItems: 'center' }}>
-				<Typography sx={{ marginTop: TEXT_MARGIN }}>Convert</Typography>
-
 				<TextField
 					data-testid={CurrencyConvertFormTestIds.amountInput}
 					helperText="Please insert amount"
@@ -52,7 +60,10 @@ export const CurrencyConvertForm: FC<CurrencyConvertFormProps> = ({ currencies, 
 					value={amount}
 				/>
 
-				<Typography sx={{ marginTop: TEXT_MARGIN }}>Into</Typography>
+				<Typography gutterBottom fontSize={30} sx={{ marginTop: -2 }}>
+					=&nbsp;
+					<span data-testid={CurrencyConvertFormTestIds.convertedAmount}>{convertedAmount}</span>
+				</Typography>
 
 				<TextField
 					select

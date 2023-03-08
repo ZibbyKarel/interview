@@ -2,6 +2,7 @@ export const CurrencyConvertFormTestIds = {
 	wrapper: 'currency-convert-form-wrapper',
 	amountInput: 'amount',
 	currencySelect: 'currency',
+	convertedAmount: 'converted-amount',
 };
 
 export const LoadingContainerTestIds = {
@@ -13,7 +14,6 @@ export const RatesPageTestIds = {
 	loader: 'loader',
 	title: 'title',
 	error: 'error',
-	convertedAmount: 'converted-amount',
 };
 
 export const TableTestIds = {

@@ -11,4 +11,4 @@ export const getTable = () => cy.get(`[data-testid="${TableTestIds.wrapper}"]`);
 
 export const getCZKInput = () => cy.get(`[data-testid="${CurrencyConvertFormTestIds.amountInput}"] input`);
 
-export const getConvertedAmount = () => cy.get(`[data-testid="${RatesPageTestIds.convertedAmount}"]`);
+export const getConvertedAmount = () => cy.get(`[data-testid="${CurrencyConvertFormTestIds.convertedAmount}"]`);
