@@ -1,16 +1,31 @@
-import express from 'express';
-import { getRates } from './middlewares/getRates';
+/**
+ * This is not a production server yet!
+ * This is only a minimal backend to get started.
+ */
+
+import { Logger } from '@nestjs/common';
+import { NestFactory } from '@nestjs/core';
 import morgan from 'morgan';
 
-const host = process.env.HOST ?? 'localhost';
-const port = process.env.PORT ? Number(process.env.PORT) : 3001;
+import { AppModule } from './app/app.module';
 
-const app = express();
+const DEFAULT_GLOBAL_PREFIX = '';
+const DEFAULT_PORT = 3001;
 
-app.use(morgan('short'));
+async function bootstrap() {
+	const globalPrefix = process.env.GLOBAL_PREFIX ?? DEFAULT_GLOBAL_PREFIX;
+	const port = process.env.PORT || DEFAULT_PORT;
 
-app.get('/api/rates', getRates);
+	const app = await NestFactory.create(AppModule);
 
-app.listen(port, host, () => {
-	console.log(`[ ready ] http://${host}:${port}`);
-});
+	app.setGlobalPrefix(globalPrefix);
+
+	// register all middlewares
+	app.use(morgan('tiny'));
+
+	await app.listen(port);
+
+	Logger.log(`🚀 Application is running on: http://localhost:${port}/${globalPrefix}`);
+}
+
+bootstrap();

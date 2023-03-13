@@ -27,6 +27,22 @@ Overall: Keep the code simple and the UI nice and easy to use for the user.
 In this repo I used something I have never work with -- **[Nx](https://nx.dev)** a fast and extensible build system to try it out.
 It is insainly powerfull I must say. For this kind of small application it is little bit overkill I know :)
 
+For server application I have used also framework I have never work with - **[Nest.JS](https://docs.nestjs.com/)** which is more strict for architecture of backend app then Exress.io which I'm more used to.
+
+### Tech Stack
+
+- **[Nx](https://nx.dev)**
+- **[Typescript](https://www.typescriptlang.org/)**
+- **[Nest.JS](https://docs.nestjs.com/)**
+- **[Cypress](https://www.cypress.io/)**
+- **[Jest](https://jestjs.io/)**
+- **[ReactQuery](https://react-query-v3.tanstack.com/)**
+- **[Storybook](https://storybook.js.org/)**
+- **[Styled Components](https://styled-components.com/)**
+- **[Material UI](https://mui.com/)**
+- **[Eslint](https://eslint.org/)**
+- **[Prettier](https://prettier.io/)**
+
 ### How to run
 
 ```ts

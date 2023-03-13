@@ -5,37 +5,34 @@
 	"projectType": "application",
 	"targets": {
 		"build": {
-			"executor": "@nrwl/esbuild:esbuild",
+			"executor": "@nrwl/webpack:webpack",
 			"outputs": ["{options.outputPath}"],
+			"defaultConfiguration": "production",
 			"options": {
-				"platform": "node",
+				"target": "node",
+				"compiler": "tsc",
 				"outputPath": "dist/apps/server",
-				"format": ["cjs"],
-				"bundle": false,
 				"main": "apps/server/src/main.ts",
 				"tsConfig": "apps/server/tsconfig.app.json",
 				"assets": ["apps/server/src/assets"],
-				"esbuildOptions": {
-					"sourcemap": true,
-					"outExtension": {
-						".js": ".js"
-					}
-				}
+				"isolatedConfig": true,
+				"webpackConfig": "apps/server/webpack.config.js"
 			},
 			"configurations": {
-				"production": {
-					"esbuildOptions": {
-						"sourcemap": false
-					}
-				}
+				"development": {},
+				"production": {}
 			}
 		},
 		"serve": {
 			"executor": "@nrwl/js:node",
+			"defaultConfiguration": "development",
 			"options": {
 				"buildTarget": "server:build"
 			},
 			"configurations": {
+				"development": {
+					"buildTarget": "server:build:development"
+				},
 				"production": {
 					"buildTarget": "server:build:production"
 				}
